@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import api from '../api/api';
+import api from '../api/axiosClient';
 import { Link } from 'react-router-dom';
 import { Edit, Trash2, Plus, Home } from 'lucide-react';
 

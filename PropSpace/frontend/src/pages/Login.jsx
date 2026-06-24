@@ -1,7 +1,7 @@
 import { useState, useContext } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../context/AuthContext';
-import api from '../api/api';
+import api from '../api/axiosClient';
 import { LogIn, Mail, Lock, Eye, EyeOff } from 'lucide-react';
 
 const Login = () => {

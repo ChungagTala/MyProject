@@ -1,5 +1,5 @@
 import { useState, useEffect, useContext } from 'react';
-import api from '../api/api';
+import api from '../api/axiosClient';
 import { AuthContext } from '../context/AuthContext';
 import { User, Save } from 'lucide-react';
 

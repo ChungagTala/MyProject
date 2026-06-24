@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
-import api from '../api/api';
+import api from '../api/axiosClient';
 import { Save, ArrowLeft, X, ImagePlus, Loader } from 'lucide-react';
 
 const CreateListing = ({ isEdit = false }) => {

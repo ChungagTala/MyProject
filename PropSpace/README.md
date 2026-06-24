@@ -17,8 +17,42 @@ PropSpace is a modern web application that makes it easy to browse, list, and ma
 - **Security**: JWT for authentication and BcryptJS for password hashing.
 
 ## Project Structure
-- `frontend/`: The React client interface.
-- `backend/`: The Node/Express server application.
+```
+PropSpace/
+├── frontend/                # React client application
+│   └── src/
+│       ├── api/
+│       │   └── axiosClient.js       # Axios HTTP client setup
+│       ├── components/
+│       │   └── Navbar.jsx           # Navigation bar
+│       ├── context/
+│       │   └── AuthContext.jsx      # Authentication state
+│       ├── pages/
+│       │   ├── Home.jsx             # Landing page with search
+│       │   ├── Login.jsx            # User login
+│       │   ├── Register.jsx         # User registration
+│       │   ├── Profile.jsx          # Account settings
+│       │   ├── MyListings.jsx       # User's own listings
+│       │   └── CreateListing.jsx    # Create/edit a listing
+│       ├── App.jsx
+│       └── main.jsx
+├── backend/                 # Express server application
+│   ├── controllers/
+│   │   ├── user.controller.js       # Auth & profile logic
+│   │   └── property.controller.js   # Property CRUD logic
+│   ├── models/
+│   │   ├── user.model.js            # User schema
+│   │   └── property.model.js        # Property schema
+│   ├── routes/
+│   │   ├── user.routes.js           # Auth & profile routes
+│   │   ├── property.routes.js       # Property routes
+│   │   └── upload.routes.js         # Image upload routes
+│   ├── middleware/
+│   │   ├── auth.middleware.js       # JWT verification
+│   │   └── upload.middleware.js     # Multer file handling
+│   └── index.js                     # Server entry point
+└── package.json             # Root scripts (concurrently)
+```
 
 ## Getting Started
 
