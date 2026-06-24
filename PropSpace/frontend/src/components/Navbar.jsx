@@ -33,7 +33,7 @@ const Navbar = () => {
             </Link>
             
             <div style={{ display: 'flex', gap: '0.5rem', alignItems: 'center' }}>
-                <NavLink to="/" style={navStyle}>Feed</NavLink>
+                <NavLink to="/" style={navStyle}>Home</NavLink>
                 {user ? (
                     <>
                         <NavLink to="/my-listings" style={navStyle}>My Listings</NavLink>

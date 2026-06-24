@@ -1,7 +1,7 @@
 const multer = require('multer');
 const path = require('path');
 
-// Storage config: save to server/uploads/ with unique filenames
+// Storage config: save to backend/uploads/ with unique filenames
 const storage = multer.diskStorage({
     destination: (req, file, cb) => {
         cb(null, path.join(__dirname, '..', 'uploads'));

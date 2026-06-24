@@ -90,6 +90,19 @@ const Home = () => {
                     zIndex: -1,
                 }}></div>
 
+                {/* Bubble Animations */}
+                <div style={{ position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, overflow: 'hidden', zIndex: -1 }}>
+                    {[...Array(20)].map((_, i) => (
+                        <div key={i} className="bubble" style={{
+                            left: `${Math.random() * 100}%`,
+                            width: `${Math.random() * 60 + 20}px`,
+                            height: `${Math.random() * 60 + 20}px`,
+                            animationDuration: `${Math.random() * 10 + 5}s`,
+                            animationDelay: `${Math.random() * 5}s`
+                        }} />
+                    ))}
+                </div>
+
                 <div style={{
                     animation: 'fadeInUp 1s ease-out',
                     display: 'flex',
@@ -98,24 +111,7 @@ const Home = () => {
                     width: '100%',
                     maxWidth: '1200px'
                 }}>
-                    <span style={{ 
-                        display: 'flex',
-                        alignItems: 'center',
-                        gap: '0.5rem',
-                        background: 'rgba(99, 102, 241, 0.15)', 
-                        color: '#a5b4fc', 
-                        padding: '0.5rem 1.25rem', 
-                        borderRadius: '2rem', 
-                        fontSize: '0.875rem',
-                        fontWeight: 600, 
-                        marginBottom: '1.5rem',
-                        backdropFilter: 'blur(10px)',
-                        border: '1px solid rgba(99, 102, 241, 0.3)',
-                        letterSpacing: '0.05em',
-                        textTransform: 'uppercase'
-                    }}>
-                        <Sparkles size={16} /> Premium Real Estate Platform
-                    </span>
+
                     
                     <h1 style={{ 
                         fontSize: 'clamp(2.5rem, 5vw, 4.5rem)', 
@@ -126,7 +122,7 @@ const Home = () => {
                         color: '#ffffff',
                         textShadow: '0 4px 20px rgba(0,0,0,0.3)'
                     }}>
-                        Discover Your <span style={{ color: 'var(--primary)' }}>Perfect Space</span>
+                        Your Gateway to <span style={{ color: 'var(--primary)' }}>Luxury Living</span>
                     </h1>
                     
                     <p style={{ 
@@ -137,7 +133,7 @@ const Home = () => {
                         lineHeight: '1.6',
                         textShadow: '0 2px 10px rgba(0,0,0,0.2)'
                     }}>
-                        Explore our curated collection of premium properties, luxury apartments, and modern studios across the globe.
+                        Find and secure the perfect property that matches your unique lifestyle and budget seamlessly.
                     </p>
 
                     {/* Search Container */}
@@ -197,12 +193,27 @@ const Home = () => {
             <div className="container">
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', marginBottom: '2.5rem' }}>
                     <div>
-                        <h2 style={{ fontSize: '2.25rem', fontWeight: 'bold' }}>Featured Properties</h2>
+                        <h2 style={{ fontSize: '2.25rem', fontWeight: 'bold' }}>Listed Properties</h2>
                         <p style={{ color: '#94a3b8', marginTop: '0.5rem' }}>Explore our latest and most popular listings</p>
                     </div>
                 </div>
 
                 <style>{`
+                    .bubble {
+                        position: absolute;
+                        bottom: -100px;
+                        background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.05) 60%, transparent 100%);
+                        border-radius: 50%;
+                        border: 1px solid rgba(255, 255, 255, 0.15);
+                        box-shadow: inset 0 0 15px rgba(255, 255, 255, 0.2);
+                        animation: floatUp infinite ease-in;
+                    }
+                    @keyframes floatUp {
+                        0% { transform: translateY(0) scale(0.8); opacity: 0; }
+                        10% { opacity: 0.8; }
+                        90% { opacity: 0.4; }
+                        100% { transform: translateY(-100vh) scale(1.2); opacity: 0; }
+                    }
                     @keyframes fadeInUp {
                         from { opacity: 0; transform: translateY(20px); }
                         to { opacity: 1; transform: translateY(0); }
